@@ -14,16 +14,14 @@ namespace Timer
         #region INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
-       
-        protected void RaisePropertyChanged([CallerMemberName]string propertyName = null)
-        {
-            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
-        }
 
-        protected virtual void OnPropertyChanged(PropertyChangedEventArgs args)
-        {
+        protected void RaisePropertyChanged([CallerMemberName] string propertyName = null) =>
+            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+
+
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs args) =>
             PropertyChanged?.Invoke(this, args);
-        }
+
         #endregion
 
         public MainWindow()
@@ -31,15 +29,14 @@ namespace Timer
             InitializeComponent();
             DataContext = this;
 
-            MidnightNotifier.DayChanged += (s, e) => { RaisePropertyChanged(nameof(Days)); };
+            MidnightNotifier.DayChanged += (s, e) => RaisePropertyChanged(nameof(Days));
         }
 
         public double Days =>
-            (new DateTime(2022, 1, 1).Date - DateTime.Now.Date).TotalDays;
+            (new DateTime(2023, 1, 1).Date - DateTime.Now.Date).TotalDays;
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        private void Button_Click(object sender, RoutedEventArgs e) =>
             RaisePropertyChanged(nameof(Days));
-        }
+
     }
 }
