@@ -2,8 +2,16 @@
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net5.0-windows</TargetFramework>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<ImplicitUsings>true</ImplicitUsings>
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="SonarAnalyzer.CSharp" Version="8.32.0.39516">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
 
 </Project>
