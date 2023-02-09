@@ -8,7 +8,7 @@
         WindowStartupLocation="Manual"
         Left="-7"
         Top="0"
-        Title="10,000$" Height="70" Width="70">
+        Title="Exit Eygpt" Height="70" Width="140">
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="{Binding Days,StringFormat={}{0} Days}"
                    Margin="5"

@@ -31,7 +31,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     }
 
     public double Days =>
-        (new DateTime(2023, 1, 1).Date - DateTime.Now.Date).TotalDays;
+        (new DateTime(2024, 1, 1).Date - DateTime.Now.Date).TotalDays;
 
     private void Button_Click(object sender, RoutedEventArgs e) =>
         RaisePropertyChanged(nameof(Days));
